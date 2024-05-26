@@ -13,7 +13,7 @@ class Author:
         return self._articles
 
     def magazines(self):
-        pass
+        return list(set(article.magazine for article in self._articles))
 
     def add_article(self, magazine, title):
         article = Article(self, magazine, title)
@@ -21,21 +21,22 @@ class Author:
         return article
 
     def topic_areas(self):
-        pass
+        return list(set(article.magazine.category for article in self._articles))
 
 class Magazine:
     def __init__(self, name, category):
         self.name = name
         self.category = category
+        self._articles = []
 
     def articles(self):
-        pass
+        return self._articles
 
     def contributors(self):
         pass
 
     def article_titles(self):
-        pass
+        return[article.title for article in self._articles]
 
     def contributing_authors(self):
         authors = {}
