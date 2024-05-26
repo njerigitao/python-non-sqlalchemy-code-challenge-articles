@@ -7,15 +7,18 @@ class Article:
 class Author:
     def __init__(self, name):
         self.name = name
+        self._articles = []
 
     def articles(self):
-        pass
+        return self._articles
 
     def magazines(self):
         pass
 
     def add_article(self, magazine, title):
-        pass
+        article = Article(self, magazine, title)
+        self._articles.append(article)
+        return article
 
     def topic_areas(self):
         pass
@@ -35,4 +38,6 @@ class Magazine:
         pass
 
     def contributing_authors(self):
-        pass
+        authors = {}
+        for article in self._articles:
+            author = article,author
