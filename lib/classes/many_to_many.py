@@ -43,3 +43,4 @@ class Magazine:
         for article in self._articles:
             author = article.author
             authors[author] = authors.get(author,0)+ 1
+            return[author for author, count in authors.items() if count > 2]
