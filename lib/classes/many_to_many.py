@@ -41,4 +41,5 @@ class Magazine:
     def contributing_authors(self):
         authors = {}
         for article in self._articles:
-            author = article,author
+            author = article.author
+            authors[author] = authors.get(author,0)+ 1
