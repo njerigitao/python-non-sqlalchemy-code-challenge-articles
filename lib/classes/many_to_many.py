@@ -1,20 +1,25 @@
 class Article:
     def __init__(self, author, magazine, title):
+        
         self.author = author
         self.magazine = magazine
         self.title = title
+        if isinstance(title, str) and 5 <= len(title) <= 50:
+            self._title = title
+        else:
+            raise ValueError("Title must be a string between 5 and 50 characters")
 
         @property
         def author(self):
-            return self.__author
+            return self._author
         
         @property
         def magazine(self):
-            return self.__magazine
+            return self._magazine
 
         @property
         def title(self):
-            return self.__title
+            return self._title
         
 class Author:
     def __init__(self, name):
@@ -47,8 +52,8 @@ class Magazine:
             raise ValueError("Magazine name must be a string")
         if not isinstance(category, str) or len(category) == 0:
             raise ValueError("Magazine category must be a non-empty string")
-        self.__name = name
-        self.__category = category
+        self.name = name
+        self.category = category
         self._articles = []
 
         @property
