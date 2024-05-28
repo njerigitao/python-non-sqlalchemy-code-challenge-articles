@@ -22,3 +22,5 @@ class Author:
             article = Article(self, magazine, title)
             self._articles.append(article)
             return article
+        def magazines(self):
+            return list(set([article.magazine for article in self._articles]))
