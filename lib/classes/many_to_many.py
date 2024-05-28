@@ -12,3 +12,13 @@ class Author:
             return self._name
         def articles(self):
             return self._articles
+        def add_article(self, magazine, title):
+            if not isinstance(magazine, Magazine):
+                raise TypeError("Magazine must be an instance of Magazine")
+            if not isinstance(title, str):
+                raise TypeError("Title must be a string")
+            if len(title) < 5 or len(title) > 50:
+                raise ValueError("Title must be between 5 and 50 characters")
+            article = Article(self, magazine, title)
+            self._articles.append(article)
+            return article
