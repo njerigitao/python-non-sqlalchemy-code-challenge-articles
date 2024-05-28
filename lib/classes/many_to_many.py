@@ -4,3 +4,5 @@ class Author:
             raise TypeError("Name must be a string")
         if len(name) == 0:
             raise ValueError("Name must be longer than 0 characters")
+        self._name = name
+        self._articles = []
