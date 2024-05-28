@@ -6,3 +6,9 @@ class Author:
             raise ValueError("Name must be longer than 0 characters")
         self._name = name
         self._articles = []
+
+        @property
+        def name(self):
+            return self._name
+        def articles(self):
+            return self._articles
