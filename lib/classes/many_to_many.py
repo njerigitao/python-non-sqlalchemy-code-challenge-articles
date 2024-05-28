@@ -42,4 +42,11 @@ class Magazine:
         self._name = name
         self._category = category
         self._articles = []
+
+        @property
+        def name(self):
+            return self._name
+        @property
+        def category(self):
+            return self._category
         
