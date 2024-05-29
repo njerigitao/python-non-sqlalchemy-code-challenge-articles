@@ -1,6 +1,5 @@
 class Article:
     def __init__(self, author, magazine, title):
-        
         self.author = author
         self.magazine = magazine
         self.title = title
@@ -73,10 +72,6 @@ class Magazine:
         return[article.title for article in self._articles]
 
     def contributing_authors(self):
-        authors = {}
-        for article in self._articles:
-            author = article.author
-            authors[author] = authors.get(author,0)+ 1
-            return[author for author, count in authors.items() if count > 2]
+       pass
 
         
